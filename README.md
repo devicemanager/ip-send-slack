@@ -1,13 +1,13 @@
 SEND IP_address slack or Local!
 ====
 
-IPアドレスをSlackに投げます。インターネットに接続していない場合はsocket(UDP)通信を使います。
-ラズパイでの動作を想定しています。
+Throw your IP address into Slack. If you are not connected to the Internet, use socket (UDP) communication.
+It is assumed to work on Raspberry Pi.
 
 ## Usage
 $ git clone https://github.com/t-lab-hirosaki/ip-send-slack.git
 
-適宜slackの"URL",チャンネル,個別管理の名前は編集してください。
+Please edit the slack "URL", channel, and individual management name accordingly.
 
 $ export RPI_NAME=''
 
@@ -15,24 +15,24 @@ $ export SLACK_TOKEN=''
 
 $ export SLACK_CHANNEL=''
 
-再起動する可能性がある場合上記のexportコマンドはbash_profileやbashrcに記述しておくことをオススメします。
+If there is a possibility of restarting, it is recommended to write the above export command in bash_profile or bashrc.
 
 
-/etc/rc.local内に
+in /etc/rc.local
 
 sleep 60
 
 /home/pi/ip-send-slack/ip_send_slack.sh &
 
-を記入することにより、電源が入ったときにIPアドレスを教えてくれます。
+By filling in , it will tell you the IP address when the power is turned on.
 
-sleepコマンドはネットワークを拾うまでに時間がかかるので必ず入れてください。
+Be sure to include the sleep command as it takes time to pick up the network.
 
-## SetUp
+## Setup
 
-セットアップの簡略化の為にstart_up.shを作成しました。
+I created start_up.sh to simplify the setup.
 
-詳しくは下記を参照してください。
+See below for details.
 
 $ bash start_up.sh
 
@@ -41,13 +41,13 @@ $ bash start_up.sh
 
 -------------------------------------------------
 
-socket(UDP)通信を用いる場合はsend先のipを記述してください。
+When using socket (UDP) communication, please describe the ip of the send destination.
 
 $ export SLACK_SEND_IP=''
 
-また、受け側のPCのセットアップも必要です。
+You also need to set up the receiving PC.
 
-受け側のサーバとなるPCで以下の記述をしてip_slack_recv.py実行してください。
+Write the following on the receiving server PC and execute ip_slack_recv.py.
 
 $ export SLACK_TOKEN=''
 
@@ -55,4 +55,6 @@ $ export SLACK_TOKEN=''
 
 sosa
 
-t-lab menber
+t-lab member
+
+Translated to english by devicemanager

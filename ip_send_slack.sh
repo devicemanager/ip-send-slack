@@ -10,10 +10,10 @@ curl -m 10 -X POST --data-urlencode \
              \"icon_emoji\": \":raspberry:\"}" $1
 }
 
-#固定
+#Replace
 #slack_URL='https://hooks.slack.com/services/XXXXXXXXXXXXXXXXXXXXXXXX'
 slack_URL=${SLACK_TOKEN}
-#認識しやすいラズパイの名前をつける
+#Give the Raspberry Pi a Recognizable Name
 name=${RPI_NAME}
 
 flag=true

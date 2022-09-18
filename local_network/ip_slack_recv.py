@@ -14,8 +14,8 @@ def get_ip_address():
 def main():
   SLACK_WEBHOOK = os.environ['SLACK_TOKEN']
 
-  local_address   = get_ip_address() # 受信側のPCのIPアドレス
-  multicast_group = '239.255.0.1' # マルチキャストアドレス
+  local_address   = get_ip_address() # IP address of receiving PC
+  multicast_group = '239.255.0.1' # multicast address
   port = 4000
   bufsize = 409
 

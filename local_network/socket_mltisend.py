@@ -7,8 +7,8 @@ from contextlib import closing
 import sys
 
 def main():
-  local_address   = '10.0.0.XXX' # 送信側のPCのIPアドレス
-  multicast_group = '239.255.0.1' # マルチキャストアドレス
+  local_address   = '10.0.0.XXX' # IP address of the sending PC
+  multicast_group = '239.255.0.1' # multicast address
   port = 4000
 
   with closing(socket.socket(socket.AF_INET, socket.SOCK_DGRAM)) as sock:
