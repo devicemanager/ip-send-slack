@@ -57,4 +57,4 @@ sosa
 
 t-lab member
 
-Translated to english by devicemanager
+Translated to english and modified some minor details by devicemanager
